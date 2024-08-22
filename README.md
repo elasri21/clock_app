@@ -42,3 +42,40 @@ Users should be able to:
 ## Technologies I used
 
 - APIs, Axios, SCSS, BEM, Figma for the design files
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](https://github.com/elasri21)
+
+### Links
+
+- Solution URL: [Click here](https://github.com/elasri21/clock_app)
+- Live Site URL: [Click here](https://elasri21.github.io/clock_app/)
+
+## Author
+
+- linkedin - [Elasri Mohamed](https://www.linkedin.com/in/mohamed-elasri-a4ab8815a/)
+  <br>
+- Github - [elasri21](https://github.com/elasri21)
+  <br>
+- Frontend Mentor - [elasri21](https://www.frontendmentor.io/profile/elasri21)
+  <br>
+- instagram - [@simo5904](https://www.instagram.com/simo5904/)
+- Twitter - [Elasri Mohamed](https://x.com/ELASRI08455745)
+- Facebook - [Elasri Mohamed](https://web.facebook.com/simo.asri.378)
+  <br>
+
+## Final considerations
+
+If you want to give me some feedback, tip, or just talk to me, feel free to contact me through any of my social medias.
+
+<br>
