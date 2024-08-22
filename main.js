@@ -20,7 +20,7 @@ const dayWeek = document.querySelector(".days-week h3");
 const week = document.querySelector(".week h3");
 
 const abbreviation = document.querySelector(".current-time small");
-const city = document.querySelector(".time-zoon .zone p");
+// const city = document.querySelector(".time-zoon .zone p");
 const currentTime = document.querySelector(".current-time h2");
 function getWorldTime() {
     axios.get('https://worldtimeapi.org/api/ip').then((quotesRes) => {
@@ -35,7 +35,7 @@ function getWorldTime() {
     dayWeek.textContent = chosenQuote['day_of_week'];
     week.textContent = chosenQuote['week_number'];
     abbreviation.textContent = chosenQuote['abbreviation'];
-    city.textContent = chosenQuote['timezone'];
+    // city.textContent = chosenQuote['timezone'];
     currentTime.textContent = hour_min;
     // console.log(quotesRes)
     // console.log(chosenQuote)

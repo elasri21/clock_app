@@ -66,6 +66,45 @@
             </div>
         </div>
     </section>
+    <script>
+        function getPlaceName(successCallback, errorCallback) {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const { latitude, longitude } = position.coords;
+                        const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json&addressdetails=1`;
+
+                        fetch(url)
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data && data.address) {
+                                    const placeName = `${data.address.city || ''} ${data.address.state || ''} ${data.address.country || ''}`;
+                                    successCallback(placeName.trim());
+                                } else {
+                                    errorCallback('Geocoding error: No address data found.');
+                                }
+                            })
+                            .catch(error => errorCallback(`Error fetching place name: ${error.message}`));
+                    },
+                    (error) => errorCallback(`Error getting location: ${error.message}`)
+                );
+            } else {
+                errorCallback('Geolocation is not supported by this browser.');
+            }
+        }
+
+        // Example usage:
+        getPlaceName(
+            (placeName) => {
+                document.querySelector(".time-zoon .zone p").textContent = placeName;
+                console.log(`You are currently at: ${placeName}`);
+            },
+            (error) => {
+                document.querySelector(".time-zoon .zone p").textContent = 'Unkown Place';
+                console.error(error);
+            }
+        );
+    </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="module" src="main.js"></script>
 </body>
