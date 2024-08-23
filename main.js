@@ -20,6 +20,7 @@ const dayWeek = document.querySelector(".days-week h3");
 const week = document.querySelector(".week h3");
 const abbreviation = document.querySelector(".current-time small");
 const currentTime = document.querySelector(".current-time h2");
+const quoteContainer = document.querySelector(".quot blockquote");
 function getWorldTime() {
     axios.get('https://worldtimeapi.org/api/ip').then((quotesRes) => {
         const chosenQuote = quotesRes.data;
@@ -39,6 +40,7 @@ function getWorldTime() {
 
 getWorldTime()
 refreshBtn.addEventListener("click", getWorldTime);
+refreshBtn.addEventListener("click", generateRandomQuotes);
 
 function greeting(hour) {
     if (hour < 12) {
@@ -54,4 +56,12 @@ function greeting(hour) {
 
 setInterval(function () {
     getWorldTime();
-}, 1000)
+}, 1000);
+
+// generate quote
+async function generateRandomQuotes (){
+const data = await fetch("https://api.adviceslip.com/advice");
+const {slip} = await data.json();
+quoteContainer.textContent = slip.advice;
+}
+generateRandomQuotes();
