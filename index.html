@@ -73,7 +73,6 @@
                     (position) => {
                         const { latitude, longitude } = position.coords;
                         const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json&addressdetails=1`;
-
                         fetch(url)
                             .then(response => response.json())
                             .then(data => {
@@ -92,8 +91,6 @@
                 errorCallback('Geolocation is not supported by this browser.');
             }
         }
-
-        // Example usage:
         getPlaceName(
             (placeName) => {
                 document.querySelector(".time-zoon .zone p").textContent = placeName;
